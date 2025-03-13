@@ -1,0 +1,508 @@
+<app-header></app-header>
+
+<!-- Hero Section Améliorée -->
+<section class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 py-24">
+  <!-- Éléments décoratifs -->
+  <div class="absolute top-0 right-0 -mt-20 -mr-20 h-96 w-96 rounded-full bg-white opacity-10 animate-pulse"></div>
+  <div class="absolute bottom-0 left-0 -mb-24 -ml-24 h-64 w-64 rounded-full bg-cyan-300 opacity-10 animate-pulse" style="animation-delay: 1s;"></div>
+
+  <!-- Motif médical -->
+  <div class="absolute inset-0 opacity-5">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <pattern id="medical-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M20 0v40M0 20h40M15 15h10v10H15z" stroke="white" stroke-width="1" fill="none"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#medical-pattern)"/>
+    </svg>
+  </div>
+
+  <!-- Particules flottantes -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute h-4 w-4 rounded-full bg-white top-1/4 left-1/4 animate-float"></div>
+    <div class="absolute h-3 w-3 rounded-full bg-cyan-200 top-3/4 left-1/3 animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute h-2 w-2 rounded-full bg-blue-300 top-2/3 left-2/3 animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute h-5 w-5 rounded-full bg-white top-1/3 left-3/4 animate-float" style="animation-delay: 3s;"></div>
+  </div>
+
+  <div class="container relative mx-auto px-4">
+    <div class="flex flex-col lg:flex-row items-center">
+      <!-- Contenu textuel -->
+      <div class="lg:w-1/2 text-center lg:text-left mb-16 lg:mb-0 z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          Votre santé mérite <span class="relative">
+            <span class="relative z-10 text-yellow-300">l'excellence</span>
+            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 138 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 18.5C16.5 13 56.5 6.5 119.5 18.5" stroke="#FCD34D" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </span> médicale
+        </h1>
+        <p class="text-blue-100 text-xl mb-10 max-w-xl mx-auto lg:mx-0">
+          Consultations personnalisées, médecins experts et ressources de qualité — tout en un seul endroit pour prendre soin de votre bien-être.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+          <button class="group bg-white text-blue-700 font-bold px-8 py-4 rounded-full shadow-xl hover:bg-yellow-300 hover:text-blue-800 transform hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+            <span class="relative z-10">Prendre rendez-vous</span>
+            <span class="absolute top-0 left-0 w-full h-0 bg-gradient-to-r from-yellow-300 to-yellow-400 transition-all duration-300 group-hover:h-full"></span>
+          </button>
+          <button class="group bg-transparent text-white border-2 border-white font-medium px-8 py-4 rounded-full hover:border-yellow-300 transform hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+            <span class="relative z-10">Découvrir nos services</span>
+            <span class="absolute top-0 left-0 w-0 h-full bg-white bg-opacity-10 transition-all duration-300 group-hover:w-full"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Image interactive -->
+      <!-- Image avec animations et éléments interactifs -->
+      <div class="lg:w-1/2 relative">
+        <div class="relative z-10 bg-white p-3 rounded-xl shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
+          <img src="assets/images/mediConseilHero.webp" alt="Médecin avec technologie médicale avancée" class="rounded-lg w-full" />
+
+          <!-- Badges animés -->
+          <div class="absolute -top-5 -right-5 bg-yellow-400 text-blue-800 font-bold px-4 py-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300">
+            24/7
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-blue-600 text-white font-bold px-4 py-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300">
+            100% Sécurisé
+          </div>
+        </div>
+
+        <!-- Cartes flottantes -->
+        <div class="absolute top-1/4 -left-16 bg-white p-3 rounded-lg shadow-md transform -rotate-6 hover:rotate-0 transition duration-300 hidden md:block">
+          <div class="flex items-center">
+            <div class="bg-green-500 p-2 rounded-full mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-gray-800">RDV confirmé</p>
+              <p class="text-xs text-gray-500">Dr. Martin • 14h30</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute bottom-1/3 -right-10 bg-white p-3 rounded-lg shadow-md transform rotate-6 hover:rotate-0 transition duration-300 hidden md:block z-20">
+          <div class="flex items-center">
+            <div class="bg-blue-500 p-2 rounded-full mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-gray-800">Nouvel article</p>
+              <p class="text-xs text-gray-500">Santé cardiaque</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistiques -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 text-center relative z-10">
+      <div class="group relative overflow-hidden rounded-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-75 group-hover:opacity-90 transition duration-300 transform group-hover:scale-105"></div>
+        <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm opacity-50"></div>
+        <div class="relative p-6">
+          <p class="text-3xl font-bold text-white mb-1 transform group-hover:translate-y-1 transition-all duration-300">12k+</p>
+          <p class="text-blue-100 transform group-hover:translate-y-1 transition-all duration-300 delay-100">Patients satisfaits</p>
+        </div>
+        <div class="absolute bottom-0 left-0 h-1 w-0 bg-yellow-300 group-hover:w-full transition-all duration-700"></div>
+      </div>
+      <div class="group relative overflow-hidden rounded-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-75 group-hover:opacity-90 transition duration-300 transform group-hover:scale-105"></div>
+        <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm opacity-50"></div>
+        <div class="relative p-6">
+          <p class="text-3xl font-bold text-white mb-1 transform group-hover:translate-y-1 transition-all duration-300">50+</p>
+          <p class="text-blue-100 transform group-hover:translate-y-1 transition-all duration-300 delay-100">Médecins experts</p>
+        </div>
+        <div class="absolute bottom-0 left-0 h-1 w-0 bg-yellow-300 group-hover:w-full transition-all duration-700"></div>
+      </div>
+      <div class="group relative overflow-hidden rounded-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-75 group-hover:opacity-90 transition duration-300 transform group-hover:scale-105"></div>
+        <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm opacity-50"></div>
+        <div class="relative p-6">
+          <p class="text-3xl font-bold text-white mb-1 transform group-hover:translate-y-1 transition-all duration-300">200+</p>
+          <p class="text-blue-100 transform group-hover:translate-y-1 transition-all duration-300 delay-100">Articles publiés</p>
+        </div>
+        <div class="absolute bottom-0 left-0 h-1 w-0 bg-yellow-300 group-hover:w-full transition-all duration-700"></div>
+      </div>
+      <div class="group relative overflow-hidden rounded-xl">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-75 group-hover:opacity-90 transition duration-300 transform group-hover:scale-105"></div>
+        <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm opacity-50"></div>
+        <div class="relative p-6">
+          <p class="text-3xl font-bold text-white mb-1 transform group-hover:translate-y-1 transition-all duration-300">24/7</p>
+          <p class="text-blue-100 transform group-hover:translate-y-1 transition-all duration-300 delay-100">Support médical</p>
+        </div>
+        <div class="absolute bottom-0 left-0 h-1 w-0 bg-yellow-300 group-hover:w-full transition-all duration-700"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vague décorative en bas -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#ffffff">
+      <path d="M0,96L80,80C160,64,320,32,480,26.7C640,21,800,43,960,53.3C1120,64,1280,64,1360,64L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Services Section Améliorée -->
+<section class="py-20 relative overflow-hidden">
+  <!-- Élément décoratif -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-full blur-3xl opacity-30"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-600 text-sm font-semibold mb-4">NOS SERVICES</span>
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-6">Solutions médicales personnalisées</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Découvrez nos services conçus pour simplifier votre parcours de santé et vous offrir un accès facile à des soins de qualité.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Service 1 -->
+      <div class="group relative bg-white rounded-2xl shadow-lg p-8 transition duration-500 hover:shadow-2xl overflow-hidden">
+        <div class="absolute top-0 left-0 h-2 w-0 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-500"></div>
+        <div class="absolute bottom-0 right-0 h-2 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-full transition-all duration-500 delay-100"></div>
+
+        <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">Rendez-vous en ligne</h3>
+        <p class="text-gray-600 mb-8 group-hover:text-gray-700 transition-colors">
+          Prenez rendez-vous avec nos médecins qualifiés en quelques clics, depuis le confort de votre domicile. Disponibilité 24/7.
+        </p>
+
+        <a href="#" class="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+          <span>Réserver maintenant</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="group relative bg-white rounded-2xl shadow-lg p-8 transition duration-500 hover:shadow-2xl overflow-hidden">
+        <div class="absolute top-0 left-0 h-2 w-0 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-500"></div>
+        <div class="absolute bottom-0 right-0 h-2 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-full transition-all duration-500 delay-100"></div>
+
+        <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6-8h6m-6 4h18M4 18h18M4 6h18M4 12h18" />
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">Articles médicaux</h3>
+        <p class="text-gray-600 mb-8 group-hover:text-gray-700 transition-colors">
+          Accédez à des articles informatifs rédigés par nos médecins experts sur divers sujets de santé et bien-être.
+        </p>
+
+        <a href="#" class="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+          <span>Explorer les articles</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="group relative bg-white rounded-2xl shadow-lg p-8 transition duration-500 hover:shadow-2xl overflow-hidden">
+        <div class="absolute top-0 left-0 h-2 w-0 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-500"></div>
+        <div class="absolute bottom-0 right-0 h-2 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:w-full transition-all duration-500 delay-100"></div>
+
+        <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">Consultations en ligne</h3>
+        <p class="text-gray-600 mb-8 group-hover:text-gray-700 transition-colors">
+          Consultez nos médecins par vidéo pour des diagnostics rapides et des conseils médicaux personnalisés.
+        </p>
+
+        <a href="#" class="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors">
+          <span>Démarrer une consultation</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Nouvelle Section Médecins -->
+<section class="py-24 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
+  <!-- Éléments décoratifs -->
+  <div class="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+  <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+  <div class="absolute bottom-0 left-1/4 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center justify-center mb-4">
+        <span class="h-px w-8 bg-blue-600"></span>
+        <span class="mx-4 text-blue-600 font-semibold tracking-widest text-sm">EXPERTS MÉDICAUX</span>
+        <span class="h-px w-8 bg-blue-600"></span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Rencontrez notre équipe de spécialistes</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+        Des professionnels de la santé dévoués et expérimentés, prêts à vous accompagner tout au long de votre parcours médical.
+      </p>
+    </div>
+
+    <!-- Filtres par spécialité -->
+    <div class="flex flex-wrap justify-center gap-3 mb-16">
+      <button class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300">
+        Tous les médecins
+      </button>
+      <button class="bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300">
+        Généralistes
+      </button>
+      <button class="bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300">
+        Cardiologues
+      </button>
+      <button class="bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300">
+        Dermatologues
+      </button>
+      <button class="bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300">
+        Pédiatres
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <!-- Médecin 1 -->
+      <!-- Carte médecin simplifiée -->
+      <div class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <!-- Photo du médecin -->
+        <div class="relative h-56">
+          <img src="/api/placeholder/400/300" alt="Dr. Sophie Martin" class="w-full h-full object-cover" />
+
+          <!-- Badge de disponibilité - simplifié -->
+          <div class="absolute top-3 right-3">
+      <span class="bg-green-500 text-white text-xs font-medium px-2 py-1 rounded-md">
+        Disponible
+      </span>
+          </div>
+        </div>
+
+        <!-- Informations du médecin -->
+        <div class="p-5">
+          <!-- En-tête avec nom et spécialité -->
+          <div class="mb-3">
+            <h3 class="text-lg font-bold text-gray-900">Dr. Sophie Martin</h3>
+            <p class="text-blue-600">Médecin généraliste</p>
+          </div>
+
+          <!-- Description courte -->
+          <p class="text-gray-600 text-sm mb-4">
+            Spécialiste en médecine préventive et familiale
+          </p>
+
+          <!-- Évaluation simplifiée -->
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+            <span class="text-gray-500 text-xs ml-2">98 avis</span>
+          </div>
+
+          <!-- Bouton d'action simplifié -->
+          <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+            Prendre rendez-vous
+          </button>
+        </div>
+      </div>
+      <!-- Médecin 2 -->
+      <!-- Carte médecin simplifiée -->
+      <div class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <!-- Photo du médecin -->
+        <div class="relative h-56">
+          <img src="/api/placeholder/400/300" alt="Dr. Sophie Martin" class="w-full h-full object-cover" />
+
+          <!-- Badge de disponibilité - simplifié -->
+          <div class="absolute top-3 right-3">
+      <span class="bg-green-500 text-white text-xs font-medium px-2 py-1 rounded-md">
+        Disponible
+      </span>
+          </div>
+        </div>
+
+        <!-- Informations du médecin -->
+        <div class="p-5">
+          <!-- En-tête avec nom et spécialité -->
+          <div class="mb-3">
+            <h3 class="text-lg font-bold text-gray-900">Dr. Sophie Martin</h3>
+            <p class="text-blue-600">Médecin généraliste</p>
+          </div>
+
+          <!-- Description courte -->
+          <p class="text-gray-600 text-sm mb-4">
+            Spécialiste en médecine préventive et familiale
+          </p>
+
+          <!-- Évaluation simplifiée -->
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+            <span class="text-gray-500 text-xs ml-2">98 avis</span>
+          </div>
+
+          <!-- Bouton d'action simplifié -->
+          <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+            Prendre rendez-vous
+          </button>
+        </div>
+      </div>
+      <!-- Médecin 3 -->
+      <!-- Carte médecin simplifiée -->
+      <div class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <!-- Photo du médecin -->
+        <div class="relative h-56">
+          <img src="/api/placeholder/400/300" alt="Dr. Sophie Martin" class="w-full h-full object-cover" />
+
+          <!-- Badge de disponibilité - simplifié -->
+          <div class="absolute top-3 right-3">
+      <span class="bg-green-500 text-white text-xs font-medium px-2 py-1 rounded-md">
+        Disponible
+      </span>
+          </div>
+        </div>
+
+        <!-- Informations du médecin -->
+        <div class="p-5">
+          <!-- En-tête avec nom et spécialité -->
+          <div class="mb-3">
+            <h3 class="text-lg font-bold text-gray-900">Dr. Sophie Martin</h3>
+            <p class="text-blue-600">Médecin généraliste</p>
+          </div>
+
+          <!-- Description courte -->
+          <p class="text-gray-600 text-sm mb-4">
+            Spécialiste en médecine préventive et familiale
+          </p>
+
+          <!-- Évaluation simplifiée -->
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+            <span class="text-gray-500 text-xs ml-2">98 avis</span>
+          </div>
+
+          <!-- Bouton d'action simplifié -->
+          <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+            Prendre rendez-vous
+          </button>
+        </div>
+      </div>
+
+<!--      medecin 4-->
+      <!-- Carte médecin simplifiée -->
+      <div class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+        <!-- Photo du médecin -->
+        <div class="relative h-56">
+          <img src="/api/placeholder/400/300" alt="Dr. Sophie Martin" class="w-full h-full object-cover" />
+
+          <!-- Badge de disponibilité - simplifié -->
+          <div class="absolute top-3 right-3">
+      <span class="bg-green-500 text-white text-xs font-medium px-2 py-1 rounded-md">
+        Disponible
+      </span>
+          </div>
+        </div>
+
+        <!-- Informations du médecin -->
+        <div class="p-5">
+          <!-- En-tête avec nom et spécialité -->
+          <div class="mb-3">
+            <h3 class="text-lg font-bold text-gray-900">Dr. Sophie Martin</h3>
+            <p class="text-blue-600">Médecin généraliste</p>
+          </div>
+
+          <!-- Description courte -->
+          <p class="text-gray-600 text-sm mb-4">
+            Spécialiste en médecine préventive et familiale
+          </p>
+
+          <!-- Évaluation simplifiée -->
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+            </div>
+            <span class="text-gray-500 text-xs ml-2">98 avis</span>
+          </div>
+
+          <!-- Bouton d'action simplifié -->
+          <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-300">
+            Prendre rendez-vous
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
