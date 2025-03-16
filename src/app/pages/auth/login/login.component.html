@@ -1,0 +1,122 @@
+<!-- Attractive Login Page -->
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+  <div class="max-w-md w-full">
+    <!-- Main Card Container -->
+    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+
+      <!-- Header Section with Logo -->
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-32"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform -translate-x-32"></div>
+
+        <div class="relative z-10 text-center">
+          <div class="flex items-center justify-center space-x-3 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <span class="font-bold text-xl text-white">MediConseil</span>
+          </div>
+          <h2 class="text-3xl font-bold text-white mb-2">Connexion</h2>
+          <p class="text-blue-100 text-sm">Accédez à vos services de santé</p>
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <div class="p-8">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('email')}"
+                placeholder="exemple@mediconseil.com"
+              >
+            </div>
+            <div *ngIf="isFieldInvalid('email')" class="text-red-500 text-xs mt-1">
+              Veuillez entrer une adresse email valide
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+              <a href="#" class="text-sm text-blue-600 hover:text-blue-700">Mot de passe oublié?</a>
+            </div>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('password')}"
+                placeholder="••••••••"
+              >
+            </div>
+            <div *ngIf="isFieldInvalid('password')" class="text-red-500 text-xs mt-1">
+              Veuillez entrer votre mot de passe
+            </div>
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-red-700">{{ errorMessage }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              type="submit"
+              [disabled]="loginForm.invalid "
+              class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 disabled:opacity-50"
+            >
+              Se connecter
+            </button>
+          </div>
+        </form>
+
+        <!-- Sign Up Link -->
+        <div class="mt-6 text-center">
+          <p class="text-sm text-gray-600">
+            Vous n'avez pas de compte?
+            <a routerLink="/register" class="font-medium text-blue-600 hover:text-blue-500">
+              Inscrivez-vous
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-6 text-center text-gray-500 text-sm">
+      &copy; 2025 MediConseil. Tous droits réservés.
+    </div>
+  </div>
+</div>
