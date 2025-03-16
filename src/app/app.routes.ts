@@ -3,6 +3,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { DoctorProfileComponent } from './pages/doctor-profile/doctor-profile.component';
 import { DoctorsComponent } from './pages/doctors/doctors.component';
 import {DoctorsListComponent} from "./pages/doctors-list/doctors-list.component";
+import {ArticlesComponent} from "./pages/articles/articles.component";
+import {ArticlesListComponent} from "./pages/articles-list/articles-list.component";
 
 export const routes: Routes = [
   {
@@ -16,6 +18,14 @@ export const routes: Routes = [
       {
         path: 'doctorprofile/:id', component: DoctorProfileComponent
       }
+    ]
+  },
+  {
+    path: 'articles', component: ArticlesComponent, children: [
+      {
+        path: '', component: ArticlesListComponent
+      },
+
     ]
   }
 ];
