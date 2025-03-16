@@ -20,5 +20,7 @@ export class DoctorService {
   getAllDoctors(page: number, size: number): Observable<Page<Doctor>> {
     return this.http.get<Page<Doctor>>(`${this.apiUrl}/all?page=${page}&size=${size}`);
   }
-
+  getDoctorById(id: string): Observable<Doctor> {
+    return this.http.get<Doctor>(`${this.apiUrl}/${id}`);
+  }
 }
