@@ -16,4 +16,5 @@ export interface Doctor {
   diploma: string;
   description: string;
   price: number;
+  password: string;
 }
