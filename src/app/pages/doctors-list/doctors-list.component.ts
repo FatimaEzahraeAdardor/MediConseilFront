@@ -1,26 +1,24 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterOutlet} from "@angular/router";
-import {HeaderComponent} from "../shared/header/header.component";
 import {FooterComponent} from "../shared/footer/footer.component";
+import {NgForOf, NgIf} from "@angular/common";
 import {DoctorService} from "../../core/services/doctor-service";
-import {NgForOf} from "@angular/common";
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-doctors-list',
   standalone: true,
   imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    NgForOf
+    NgForOf,
+    RouterLink
+
   ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './doctors-list.component.html',
+  styleUrl: './doctors-list.component.css'
 })
-export class HomeComponent implements OnInit {
+export class DoctorsListComponent implements OnInit {
   doctors: any[] = [];
   currentPage = 0;
-  pageSize = 4;
+  pageSize = 10;
   totalItems = 0;
   ngOnInit(): void {
     this.loadDoctors()
@@ -37,6 +35,15 @@ export class HomeComponent implements OnInit {
         console.error('Error fetching doctors:', error);
       }
     );
+  }
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    this.loadDoctors();
+  }
+
+  getPages(): number[] {
+    const totalPages = Math.ceil(this.totalItems / this.pageSize);
+    return Array.from({ length: totalPages }, (_, i) => i);
   }
 
 }
