@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Page} from "./doctor-service";
 import {Article} from "../interfaces/article";
+import {Doctor} from "../interfaces/doctor";
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,8 @@ export class ArticleService {
   constructor(private http: HttpClient) { }
   getAllArticles(page: number, size: number): Observable<Page<Article>> {
     return this.http.get<Page<Article>>(`${this.apiUrl}/all?page=${page}&size=${size}`);
+  }
+  getArticleById(id: string): Observable<Article> {
+    return this.http.get<Article>(`${this.apiUrl}/${id}`);
   }
 }

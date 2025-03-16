@@ -5,6 +5,7 @@ import { DoctorsComponent } from './pages/doctors/doctors.component';
 import {DoctorsListComponent} from "./pages/doctors-list/doctors-list.component";
 import {ArticlesComponent} from "./pages/articles/articles.component";
 import {ArticlesListComponent} from "./pages/articles-list/articles-list.component";
+import {ArticleDetailsComponent} from "./pages/article-details/article-details.component";
 
 export const routes: Routes = [
   {
@@ -25,6 +26,9 @@ export const routes: Routes = [
       {
         path: '', component: ArticlesListComponent
       },
+      {
+        path: ':id', component: ArticleDetailsComponent
+      }
 
     ]
   }
