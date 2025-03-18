@@ -9,6 +9,7 @@ export interface User {
   phoneNumber: string;
   city_id: string;
   password: string;
+  role?: string;
 }
 export interface ApiResponse<T>{
   status?: boolean;

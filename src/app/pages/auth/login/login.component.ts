@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         next: (user) => {
           if (user) {
             // Navigate to home or dashboard page
-            this.router.navigate(['/doctor']);
+            this.router.navigate(['/admin']);
           } else {
             this.errorMessage = 'Email ou mot de passe incorrect.';
           }
