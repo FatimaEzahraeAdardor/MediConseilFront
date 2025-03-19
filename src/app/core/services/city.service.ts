@@ -21,9 +21,9 @@ export class CityService {
     return this.http.get<City[]>(`${this.apiUrl}/all?page=${page}&size=${size}`);
   }
 
-  // Get cities by region
-  getCitiesByRegion(region: string,page: number, size: number): Observable<City[]> {
-    return this.http.get<City[]>(`${this.apiUrl}?region=${region}&page=${page}&size=${size}`);
+  // Récupérer les villes par région avec pagination
+  getCitiesByRegion(region: string, page: number, size: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/region/${region}?page=${page}&size=${size}`);
   }
 
   // Get a single city by ID
@@ -51,5 +51,8 @@ export class CityService {
   getCitiesList():Observable<City[]> {
     return this.http.get<City[]>(`${this.apiUrl}/list`);
 
+  }
+  getRegions(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/regions`);
   }
 }

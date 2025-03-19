@@ -13,22 +13,26 @@
     </button>
   </div>
 
-  <!-- Search and Filter -->
-  <div class="mb-6 flex flex-col md:flex-row gap-4">
-    <div class="relative flex-1">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-        </svg>
-      </div>
-      <input type="search" [(ngModel)]="searchTerm" (input)="filterCities()" class="block w-full p-2.5 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher une ville...">
-    </div>
-    <div class="md:w-72">
-      <select [(ngModel)]="selectedRegion" (change)="filterByRegion()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+  <!--  Filter Area -->
+  <div class="mb-6 flex flex-col md:flex-row gap-4 items-center">
+    <div class="relative md:w-72">
+      <select
+        (change)="onRegionChange($event)"
+        [value]="selectedRegion"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
         <option value="">Toutes les régions</option>
         <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
       </select>
     </div>
+    <button
+      *ngIf="selectedRegion"
+      (click)="resetFilter()"
+      class="px-3 py-2 text-sm text-gray-600 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors duration-200 flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      Réinitialiser
+    </button>
   </div>
 
   <!-- Cities Table -->
@@ -71,22 +75,22 @@
     </table>
   </div>
 
-  <!-- Pagination -->
-  <div class="flex items-center justify-between mt-4">
-    <div class="text-sm text-gray-700">
-      Affichage de <span class="font-medium">{{ currentPage * pageSize + 1 }}</span> à <span class="font-medium">{{ Math.min((currentPage + 1) * pageSize, totalItems) }}</span> sur <span class="font-medium">{{ totalItems }}</span> villes
+  <!-- Filter Status and Pagination -->
+  <div class="flex flex-col md:flex-row justify-between items-center mt-4 gap-2">
+    <div *ngIf="selectedRegion" class="text-sm text-gray-600">
+      Filtré par région: <span class="font-medium">{{ selectedRegion }}</span>
     </div>
-    <div class="flex space-x-1">
-      <button [disabled]="currentPage === 0" (click)="onPageChange(currentPage - 1)" class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
-        Précédent
-      </button>
-      <button *ngFor="let page of getVisiblePages()"
-              [class]="page === currentPage ? 'px-3 py-1 rounded-md bg-blue-600 text-white' : 'px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'"
-              (click)="onPageChange(page)">
+    <div *ngIf="!selectedRegion" class="text-sm text-gray-600">
+      Affichage de toutes les villes
+    </div>
+    <div class="flex justify-center">
+      <button
+        *ngFor="let page of getPages()"
+        (click)="onPageChange(page)"
+        class="mx-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-400"
+        [class.bg-blue-700]="page === currentPage"
+      >
         {{ page + 1 }}
-      </button>
-      <button [disabled]="currentPage === getPages().length - 1" (click)="onPageChange(currentPage + 1)" class="px-3 py-1 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
-        Suivant
       </button>
     </div>
   </div>
