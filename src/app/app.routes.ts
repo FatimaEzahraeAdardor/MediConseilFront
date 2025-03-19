@@ -11,6 +11,7 @@ import {LoginComponent} from "./pages/auth/login/login.component";
 import {AdminComponent} from "./pages/dashboard/dashboardAdmin/admin/admin.component";
 import {authGuard} from "./core/guards/auth.guard";
 import {CitiesComponent} from "./pages/dashboard/dashboardAdmin/cities/cities.component";
+import {CategoriesComponent} from "./pages/dashboard/dashboardAdmin/categories/categories.component";
 
 export const routes: Routes = [
   {
@@ -47,6 +48,9 @@ export const routes: Routes = [
     path: 'admin', component: AdminComponent, canActivate: [authGuard] , children: [
       {
         path: 'cities', component: CitiesComponent,
+      },
+      {
+        path: 'categories', component: CategoriesComponent
       }
     ]
 

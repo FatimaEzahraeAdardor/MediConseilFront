@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { City } from "../interfaces/city";
+import {Page} from "./doctor-service";
+import {Category} from "../interfaces/category";
 
-interface ApiResponse {
-  message: string;
-  city?: City;
-}
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +16,13 @@ export class CityService {
   constructor(private http: HttpClient) { }
 
   // Get all cities
-  getCities(page: number, size: number): Observable<City[]> {
-    return this.http.get<City[]>(`${this.apiUrl}/all?page=${page}&size=${size}`);
+  getCities(page: number, size: number): Observable<Page<City>> {
+    return this.http.get<Page<City>>(`${this.apiUrl}/all?page=${page}&size=${size}`);
   }
 
   // Récupérer les villes par région avec pagination
-  getCitiesByRegion(region: string, page: number, size: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/region/${region}?page=${page}&size=${size}`);
+  getCitiesByRegion(region: string, page: number, size: number): Observable<Page<City>> {
+    return this.http.get<Page<City>>(`${this.apiUrl}/region/${region}?page=${page}&size=${size}`);
   }
 
   // Get a single city by ID
@@ -32,13 +31,13 @@ export class CityService {
   }
 
   // Create a new city
-  createCity(city: City): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(`${this.apiUrl}/save`, city);
+  createCity(city: City): Observable<City> {
+    return this.http.post<City>(`${this.apiUrl}/save`, city);
   }
 
   // Update an existing city
-  updateCity(id: string, city: City): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(`${this.apiUrl}/update/${id}`, city);
+  updateCity(id: string, city: City): Observable<City> {
+    return this.http.put<City>(`${this.apiUrl}/update/${id}`, city);
   }
 
   // Delete a city
