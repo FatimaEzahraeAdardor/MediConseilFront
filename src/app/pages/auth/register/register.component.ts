@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
   }
 
   loadCities(): void {
-    this.cityService.getCities().subscribe({
+    this.cityService.getCitiesList().subscribe({
       next: (data) => {
         this.cities = data;
       },

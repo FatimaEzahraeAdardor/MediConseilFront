@@ -3,7 +3,7 @@
   <!-- Sidebar -->
   <aside class="fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-lg transition-all duration-300 transform" [ngClass]="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen}">
     <!-- Logo -->
-    <div class="flex items-center h-16 px-4 border-b border-gray-200">
+    <div class="flex items-center h-16 px-4 border-b border-gray-200" (click)="toggleSidebar()">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
@@ -128,7 +128,7 @@
 
     <!-- Main Content Area -->
     <main class="p-4 md:p-6">
-      <!-- Dashboard Overview Cards -->
+    <router-outlet></router-outlet>
     </main>
   </div>
 </div>

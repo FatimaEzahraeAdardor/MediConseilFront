@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgClass, DatePipe, CurrencyPipe, NgIf } from "@angular/common";
 import { RouterModule } from '@angular/router';
-import { AuthService } from "../../../core/services/auth.service";
-import { User } from "../../../core/interfaces/user";
+import { AuthService } from "../../../../core/services/auth.service";
+import { User } from "../../../../core/interfaces/user";
 
 interface ActivityItem {
   // Add your ActivityItem properties here if needed

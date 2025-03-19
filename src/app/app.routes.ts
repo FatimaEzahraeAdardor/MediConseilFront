@@ -8,8 +8,9 @@ import {ArticlesListComponent} from "./pages/articles-list/articles-list.compone
 import {ArticleDetailsComponent} from "./pages/article-details/article-details.component";
 import {RegisterComponent} from "./pages/auth/register/register.component";
 import {LoginComponent} from "./pages/auth/login/login.component";
-import {AdminComponent} from "./pages/doctor/doctor/admin.component";
+import {AdminComponent} from "./pages/dashboard/dashboardAdmin/admin/admin.component";
 import {authGuard} from "./core/guards/auth.guard";
+import {CitiesComponent} from "./pages/dashboard/dashboardAdmin/cities/cities.component";
 
 export const routes: Routes = [
   {
@@ -43,7 +44,11 @@ export const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'admin', component: AdminComponent, canActivate: [authGuard]
+    path: 'admin', component: AdminComponent, canActivate: [authGuard] , children: [
+      {
+        path: 'cities', component: CitiesComponent,
+      }
+    ]
 
   }
 ];

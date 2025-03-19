@@ -5,7 +5,7 @@ import { Doctor } from "../../core/interfaces/doctor";
 import { DoctorService } from "../../core/services/doctor-service";
 
 @Component({
-  selector: 'app-doctor-profile',
+  selector: 'app-admin-profile',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './doctor-profile.component.html',
@@ -43,7 +43,7 @@ export class DoctorProfileComponent implements OnInit {
         console.log('Doctor data:', this.doctor);
       },
       error: (err) => {
-        console.error('Error fetching doctor details:', err);
+        console.error('Error fetching admin details:', err);
         this.errorMessage = "Impossible de charger les détails du médecin";
         this.isLoading = false;
       }
