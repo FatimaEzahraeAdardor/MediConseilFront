@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Category} from "../../../../core/interfaces/category";
-import {CategoryService} from "../../../../core/services/category.service";
+import {CategoryService} from "../../../../core/services/category/category.service";
 import {NgForOf, NgIf} from "@angular/common";
 
 @Component({

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { City } from "../interfaces/city";
-import {Page} from "./doctor-service";
-import {Category} from "../interfaces/category";
+import { City } from "../../interfaces/city";
+import {Page} from "../doctor/doctor-service";
+import {Category} from "../../interfaces/category";
 
 
 

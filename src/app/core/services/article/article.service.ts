@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Page} from "./doctor-service";
-import {Article} from "../interfaces/article";
-import {Doctor} from "../interfaces/doctor";
+import {Page} from "../doctor/doctor-service";
+import {Article} from "../../interfaces/article";
+import {Doctor} from "../../interfaces/doctor";
 
 @Injectable({
   providedIn: 'root'

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { City } from "../../../../core/interfaces/city";
-import { CityService } from "../../../../core/services/city.service";
+import { CityService } from "../../../../core/services/city/city.service";
 
 @Component({
   selector: 'app-cities',

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Article} from "../../core/interfaces/article";
-import {ArticleService} from "../../core/services/article.service";
+import {Article} from "../../../core/interfaces/article";
+import {ArticleService} from "../../../core/services/article/article.service";
 import {RouterLink} from "@angular/router";
 import {DatePipe, NgForOf, SlicePipe} from "@angular/common";
 

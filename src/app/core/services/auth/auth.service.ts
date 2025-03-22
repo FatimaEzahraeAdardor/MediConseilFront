@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { ApiResponse, User } from "../interfaces/user";
+import { ApiResponse, User } from "../../interfaces/user";
 import {Observable, map, tap, of, catchError} from "rxjs";
 import { Router } from '@angular/router';
 import {jwtDecode} from "jwt-decode";

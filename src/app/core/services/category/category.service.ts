@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {City} from "../interfaces/city";
-import {Category} from "../interfaces/category";
-import {Page} from "./doctor-service";
+import {City} from "../../interfaces/city";
+import {Category} from "../../interfaces/category";
+import {Page} from "../doctor/doctor-service";
 
 @Injectable({
   providedIn: 'root'

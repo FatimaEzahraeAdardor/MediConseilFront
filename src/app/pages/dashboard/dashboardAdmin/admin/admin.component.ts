@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgClass, DatePipe, CurrencyPipe, NgIf } from "@angular/common";
 import { RouterModule } from '@angular/router';
-import { AuthService } from "../../../../core/services/auth.service";
+import { AuthService } from "../../../../core/services/auth/auth.service";
 import { User } from "../../../../core/interfaces/user";
 
 interface ActivityItem {

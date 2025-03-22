@@ -1,17 +1,20 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { DoctorProfileComponent } from './pages/doctor-profile/doctor-profile.component';
-import { DoctorsComponent } from './pages/doctors/doctors.component';
-import {DoctorsListComponent} from "./pages/doctors-list/doctors-list.component";
-import {ArticlesComponent} from "./pages/articles/articles.component";
-import {ArticlesListComponent} from "./pages/articles-list/articles-list.component";
-import {ArticleDetailsComponent} from "./pages/article-details/article-details.component";
+import { HomeComponent } from './pages/landingPage/home/home.component';
+import { DoctorProfileComponent } from './pages/landingPage/doctor-profile/doctor-profile.component';
+import { DoctorsComponent } from './pages/landingPage/doctors/doctors.component';
+import { DoctorsListComponent as AdminDoctorComponent} from './pages/dashboard/dashboardAdmin/doctor/doctorsList/doctorsList.component';
+import {DoctorsListComponent} from "./pages/landingPage/doctors-list/doctors-list.component";
+import {ArticlesComponent} from "./pages/landingPage/articles/articles.component";
+import {ArticlesListComponent} from "./pages/landingPage/articles-list/articles-list.component";
+import {ArticleDetailsComponent} from "./pages/landingPage/article-details/article-details.component";
 import {RegisterComponent} from "./pages/auth/register/register.component";
 import {LoginComponent} from "./pages/auth/login/login.component";
 import {AdminComponent} from "./pages/dashboard/dashboardAdmin/admin/admin.component";
 import {authGuard} from "./core/guards/auth.guard";
 import {CitiesComponent} from "./pages/dashboard/dashboardAdmin/cities/cities.component";
 import {CategoriesComponent} from "./pages/dashboard/dashboardAdmin/categories/categories.component";
+import {CreateDoctorComponent} from "./pages/dashboard/dashboardAdmin/doctor/create-doctor/create-doctor.component";
+import {DoctorDetailsComponent} from "./pages/dashboard/dashboardAdmin/doctor/doctor-details/doctor-details.component";
 
 export const routes: Routes = [
   {
@@ -51,6 +54,15 @@ export const routes: Routes = [
       },
       {
         path: 'categories', component: CategoriesComponent
+      },
+      {
+        path: 'doctors', component: AdminDoctorComponent
+      },
+      {
+        path: 'create', component: CreateDoctorComponent
+      },
+      {
+        path: 'doctor/:id', component: DoctorDetailsComponent
       }
     ]
 

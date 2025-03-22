@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Doctor } from "../../core/interfaces/doctor";
-import { DoctorService } from "../../core/services/doctor-service";
+import { Doctor } from "../../../core/interfaces/doctor";
+import { DoctorService } from "../../../core/services/doctor/doctor-service";
 
 @Component({
   selector: 'app-admin-profile',

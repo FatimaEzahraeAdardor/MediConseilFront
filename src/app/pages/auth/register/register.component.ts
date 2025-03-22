@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from "../../../core/services/auth.service";
-import { CityService } from "../../../core/services/city.service";
+import { AuthService } from "../../../core/services/auth/auth.service";
+import { CityService } from "../../../core/services/city/city.service";
 import {City} from "../../../core/interfaces/city";
 
 @Component({

@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Doctor} from "../../core/interfaces/doctor";
+import {Doctor} from "../../../core/interfaces/doctor";
 import {ActivatedRoute} from "@angular/router";
-import {DoctorService} from "../../core/services/doctor-service";
-import {Article} from "../../core/interfaces/article";
-import {ArticleService} from "../../core/services/article.service";
+import {DoctorService} from "../../../core/services/doctor/doctor-service";
+import {Article} from "../../../core/interfaces/article";
+import {ArticleService} from "../../../core/services/article/article.service";
 import {DatePipe, NgIf} from "@angular/common";
 
 @Component({

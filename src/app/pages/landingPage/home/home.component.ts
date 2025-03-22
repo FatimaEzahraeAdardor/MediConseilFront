@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterOutlet} from "@angular/router";
-import {HeaderComponent} from "../shared/header/header.component";
-import {FooterComponent} from "../shared/footer/footer.component";
-import {DoctorService} from "../../core/services/doctor-service";
+import {HeaderComponent} from "../../shared/header/header.component";
+import {FooterComponent} from "../../shared/footer/footer.component";
+import {DoctorService} from "../../../core/services/doctor/doctor-service";
 import {NgForOf} from "@angular/common";
 
 @Component({
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
         this.totalItems = response.totalElements;
       },
       (error) => {
-        console.error('Error fetching doctors:', error);
+        console.error('Error fetching doctorsList:', error);
       }
     );
   }
