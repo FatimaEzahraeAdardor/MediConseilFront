@@ -1,17 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {Doctor} from "../../../core/interfaces/doctor";
-import {ActivatedRoute} from "@angular/router";
-import {DoctorService} from "../../../core/services/doctor/doctor-service";
-import {Article} from "../../../core/interfaces/article";
-import {ArticleService} from "../../../core/services/article/article.service";
-import {DatePipe, NgIf} from "@angular/common";
+import { Component, OnInit } from '@angular/core';
+import { Article } from "../../../../../core/interfaces/article";
+import { ActivatedRoute, Router, RouterLink } from "@angular/router";
+import { ArticleService } from "../../../../../core/services/article/article.service";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'app-article-details',
   standalone: true,
   imports: [
-    DatePipe,
-    NgIf
+    RouterLink,
+    CommonModule
   ],
   templateUrl: './article-details.component.html',
   styleUrl: './article-details.component.css'
@@ -24,6 +22,7 @@ export class ArticleDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private articleService: ArticleService,
   ) {}
 
@@ -31,27 +30,39 @@ export class ArticleDetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.articleId = params['id'];
       if (this.articleId) {
-        this.loadDArticleDetails();
+        this.loadArticleDetails();
       } else {
-        this.errorMessage = "Identifiant du article manquant";
+        this.errorMessage = "Identifiant de l'article manquant";
         this.isLoading = false;
       }
     });
   }
 
-  loadDArticleDetails(): void {
+  loadArticleDetails(): void {
     this.isLoading = true;
     this.articleService.getArticleById(this.articleId).subscribe({
       next: (data) => {
         this.article = data;
         this.isLoading = false;
-        console.log('article data:', this.article);
+        console.log('Article data:', this.article);
       },
       error: (err) => {
         console.error('Error fetching article details:', err);
-        this.errorMessage = "Impossible de charger les détails du article";
+        this.errorMessage = "Impossible de charger les détails de l'article";
         this.isLoading = false;
       }
     });
+  }
+
+  formatDate(date: string): string {
+    if (!date) return '';
+
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    };
+
+    return new Date(date).toLocaleDateString('fr-FR', options);
   }
 }

@@ -18,4 +18,9 @@ export class ArticleService {
   getArticleById(id: string): Observable<Article> {
     return this.http.get<Article>(`${this.apiUrl}/${id}`);
   }
+  deleteArticle(id: string): Observable<string> {
+    return this.http.delete(`${this.apiUrl}/delete/${id}`, {
+      responseType: 'text'
+    }) as Observable<string>;
+  }
 }
