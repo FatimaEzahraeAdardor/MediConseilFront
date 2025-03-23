@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from "../../../core/services/auth.service";
+import { AuthService } from "../../../core/services/auth/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         next: (user) => {
           if (user) {
             // Navigate to home or dashboard page
-            this.router.navigate(['/doctor']);
+            this.router.navigate(['/admin']);
           } else {
             this.errorMessage = 'Email ou mot de passe incorrect.';
           }
