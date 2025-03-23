@@ -1,3 +1,4 @@
+import {City} from "./city";
 
 export interface User {
   id?: string;
@@ -17,4 +18,14 @@ export interface ApiResponse<T>{
   error?: string;
   token?: string;
   data?: T;
+}
+export interface Patient {
+  id: string;
+  userName: string;
+  image?: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  city: City;
 }

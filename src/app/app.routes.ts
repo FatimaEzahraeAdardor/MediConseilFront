@@ -18,6 +18,7 @@ import {CategoriesComponent} from "./pages/dashboard/dashboardAdmin/categories/c
 import {CreateDoctorComponent} from "./pages/dashboard/dashboardAdmin/doctor/create-doctor/create-doctor.component";
 import {DoctorDetailsComponent} from "./pages/dashboard/dashboardAdmin/doctor/doctor-details/doctor-details.component";
 import {SpecialtyComponent} from "./pages/dashboard/dashboardAdmin/specialty/specialty.component";
+import {PatientComponent} from "./pages/dashboard/dashboardAdmin/patient/patient.component";
 
 
 export const routes: Routes = [
@@ -76,6 +77,9 @@ export const routes: Routes = [
       },
       {
         path: 'specialties', component: SpecialtyComponent
+      },
+      {
+        path: 'patients' , component: PatientComponent
       }
     ]
 
