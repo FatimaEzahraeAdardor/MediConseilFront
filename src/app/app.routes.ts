@@ -17,6 +17,7 @@ import {CitiesComponent} from "./pages/dashboard/dashboardAdmin/cities/cities.co
 import {CategoriesComponent} from "./pages/dashboard/dashboardAdmin/categories/categories.component";
 import {CreateDoctorComponent} from "./pages/dashboard/dashboardAdmin/doctor/create-doctor/create-doctor.component";
 import {DoctorDetailsComponent} from "./pages/dashboard/dashboardAdmin/doctor/doctor-details/doctor-details.component";
+import {SpecialtyComponent} from "./pages/dashboard/dashboardAdmin/specialty/specialty.component";
 
 
 export const routes: Routes = [
@@ -72,6 +73,9 @@ export const routes: Routes = [
       },
       {
         path: 'article/:id', component: AdminArticleListComponenet
+      },
+      {
+        path: 'specialties', component: SpecialtyComponent
       }
     ]
 
