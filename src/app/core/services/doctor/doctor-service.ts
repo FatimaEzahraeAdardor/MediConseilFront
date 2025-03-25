@@ -32,4 +32,8 @@ export class DoctorService {
       responseType: 'text'
     }) as Observable<string>;
   }
+  getDoctors(): Observable<Doctor[]> {
+    return this.http.get<Doctor[]>(this.apiUrl);
+  }
+
 }

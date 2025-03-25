@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterOutlet} from "@angular/router";
+import {RouterLink, RouterOutlet} from "@angular/router";
 import {HeaderComponent} from "../../shared/header/header.component";
 import {FooterComponent} from "../../shared/footer/footer.component";
 import {DoctorService} from "../../../core/services/doctor/doctor-service";
@@ -12,7 +12,8 @@ import {NgForOf} from "@angular/common";
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

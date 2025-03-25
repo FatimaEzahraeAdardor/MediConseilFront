@@ -19,6 +19,11 @@ import {CreateDoctorComponent} from "./pages/dashboard/dashboardAdmin/doctor/cre
 import {DoctorDetailsComponent} from "./pages/dashboard/dashboardAdmin/doctor/doctor-details/doctor-details.component";
 import {SpecialtyComponent} from "./pages/dashboard/dashboardAdmin/specialty/specialty.component";
 import {PatientComponent} from "./pages/dashboard/dashboardAdmin/patient/patient.component";
+import {
+  ConsultationListComponent
+} from "./pages/landingPage/consultation/consultation-list/consultation-list.component";
+import {ConsultationsComponent} from "./pages/landingPage/consultation/consultations/consultations.component";
+import {BookingComponent} from "./pages/landingPage/consultation/booking/booking.component";
 
 
 export const routes: Routes = [
@@ -44,6 +49,16 @@ export const routes: Routes = [
         path: ':id', component: ArticleDetailsComponent
       }
 
+    ]
+  },
+  {
+    path: 'consultations' , component : ConsultationsComponent , children:[
+      {
+        path: '', component: ConsultationListComponent
+      },
+      {
+        path: 'book', component: BookingComponent
+      }
     ]
   },
   {
