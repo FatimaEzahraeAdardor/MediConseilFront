@@ -7,15 +7,15 @@ import {Patient, User} from "../../interfaces/user";
 @Injectable({
   providedIn: 'root'
 })
-export class PatientService {
+export class UserService {
   private apiUrl = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) { }
   getAllPatients(page: number, size: number): Observable<Page<Patient>> {
     return this.http.get<Page<Patient>>(`${this.apiUrl}/patients?page=${page}&size=${size}`);
   }
-  getPatientById(id: string): Observable<Patient> {
-    return this.http.get<Patient>(`${this.apiUrl}/${id}`);
+  getUserById(id: string): Observable<User| null> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
   }
   createPatient(user: User): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/save`, user);
