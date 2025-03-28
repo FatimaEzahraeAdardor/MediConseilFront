@@ -1,0 +1,286 @@
+<!-- Attractive Registration Page -->
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+  <div class="max-w-4xl w-full">
+    <!-- Main Card Container -->
+    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+
+      <!-- Left Side - Banner -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-700 md:w-2/5 p-8 text-white flex flex-col justify-between relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-32"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform -translate-x-32"></div>
+
+        <!-- Logo and Headline -->
+        <div class="relative z-10">
+          <div class="flex items-center space-x-3 mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <h3 routerLink="/" class="font-bold text-xl">MediConseil</h3>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">Bienvenue à la communauté médicale</h1>
+          <p class="text-blue-100 mb-8">Rejoignez MediConseil et accédez à des services de santé personnalisés, des consultations en ligne et des ressources médicales fiables.</p>
+        </div>
+
+        <!-- Features List -->
+        <div class="relative z-10">
+          <div class="flex items-start space-x-3 mb-4">
+            <div class="bg-white bg-opacity-20 rounded-full p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span>Consultation médicale en ligne</span>
+          </div>
+          <div class="flex items-start space-x-3 mb-4">
+            <div class="bg-white bg-opacity-20 rounded-full p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span>Articles et conseils de santé</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="bg-white bg-opacity-20 rounded-full p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <span>Suivi médical personnalisé</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Form -->
+      <div class="md:w-3/5 p-8">
+        <div class="text-center md:text-left mb-6">
+          <h2 class="text-2xl font-bold text-gray-800">Créez votre compte</h2>
+          <p class="text-gray-500">Déjà membre? <a routerLink="/login" class="text-blue-600 font-medium hover:text-blue-700">Connectez-vous</a></p>
+        </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-5">
+          <!-- Name Fields Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  id="firstName"
+                  formControlName="firstName"
+                  class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('firstName')}"
+                  placeholder="Jean"
+                >
+              </div>
+              <div *ngIf="isFieldInvalid('firstName')" class="text-red-500 text-xs mt-1">
+                Le prénom est requis
+              </div>
+            </div>
+
+            <div>
+              <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  id="lastName"
+                  formControlName="lastName"
+                  class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('lastName')}"
+                  placeholder="Dupont"
+                >
+              </div>
+              <div *ngIf="isFieldInvalid('lastName')" class="text-red-500 text-xs mt-1">
+                Le nom est requis
+              </div>
+            </div>
+          </div>
+
+          <!-- Username Field -->
+          <div>
+            <label for="userName" class="block text-sm font-medium text-gray-700 mb-1">Nom d'utilisateur</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="userName"
+                formControlName="userName"
+                class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('userName')}"
+                placeholder="jean.dupont"
+              >
+            </div>
+            <div *ngIf="isFieldInvalid('userName')" class="text-red-500 text-xs mt-1">
+              Le nom d'utilisateur est requis
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('email')}"
+                placeholder="jean.dupont@exemple.com"
+              >
+            </div>
+            <div *ngIf="isFieldInvalid('email')" class="text-red-500 text-xs mt-1">
+              L'email est requis et doit être valide
+            </div>
+          </div>
+
+          <!-- Phone and City Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="phoneNumber" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                </div>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  formControlName="phoneNumber"
+                  class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('phoneNumber')}"
+                  placeholder="06 12 34 56 78"
+                >
+              </div>
+              <div *ngIf="isFieldInvalid('phoneNumber')" class="text-red-500 text-xs mt-1">
+                Le numéro de téléphone doit avoir entre 10 et 15 caractères
+              </div>
+            </div>
+
+            <div>
+              <label for="city_id" class="block text-sm font-medium text-gray-700 mb-1">Ville</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <select
+                  id="city_id"
+                  formControlName="city_id"
+                  class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none"
+                  [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('city_id')}"
+                >
+                  <option [ngValue]="null" disabled selected>Sélectionnez une ville</option>
+                  <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div *ngIf="isFieldInvalid('city_id')" class="text-red-500 text-xs mt-1">
+                Veuillez sélectionner une ville
+              </div>
+            </div>
+          </div>
+
+          <!-- Password Fields -->
+          <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                [ngClass]="{'border-red-500 ring-red-100': isFieldInvalid('password')}"
+                placeholder="••••••••"
+              >
+            </div>
+            <div *ngIf="isFieldInvalid('password')" class="text-red-500 text-xs mt-1">
+              Le mot de passe doit contenir au moins 8 caractères
+            </div>
+          </div>
+
+          <div>
+            <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirmer le mot de passe</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <input
+                type="password"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                class="pl-10 block w-full border border-gray-300 rounded-lg shadow-sm py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                [ngClass]="{'border-red-500 ring-red-100': passwordsDoNotMatch()}"
+                placeholder="••••••••"
+              >
+            </div>
+            <div *ngIf="passwordsDoNotMatch()" class="text-red-500 text-xs mt-1">
+              Les mots de passe ne correspondent pas
+            </div>
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-red-700">{{ errorMessage }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              type="submit"
+              [disabled]="registerForm.invalid "
+              class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 disabled:opacity-50"
+            >
+             Créer mon compte
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="mt-6 text-center text-gray-500 text-sm">
+      &copy; 2025 MediConseil. Tous droits réservés.
+    </div>
+  </div>
+</div>
